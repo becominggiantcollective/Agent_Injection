@@ -1,0 +1,34 @@
+{
+  "agent_config": {
+    "name": "SecurityReportingAgent",
+    "version": "1.0.0",
+    "description": "AI Agent for Security Reporting & Summary - aggregates and summarizes findings from analyzer agents"
+  },
+  "risk_scoring": {
+    "severity_weights": {
+      "critical": 10.0,
+      "high": 7.5,
+      "medium": 5.0,
+      "low": 2.5,
+      "info": 1.0
+    },
+    "risk_thresholds": {
+      "critical": 80,
+      "high": 60,
+      "medium": 40,
+      "low": 20
+    }
+  },
+  "report_settings": {
+    "include_technical_details": true,
+    "include_remediation_steps": true,
+    "max_remediation_actions": 10,
+    "export_formats": ["human", "machine"],
+    "timestamp_format": "%Y-%m-%d %H:%M:%S"
+  },
+  "output": {
+    "human_readable_extension": ".txt",
+    "machine_readable_extension": ".json",
+    "default_output_directory": "./reports"
+  }
+}
