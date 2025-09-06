@@ -1,6 +1,7 @@
 # Generated reports
 security_report_*.txt
 security_report_*.json
+reports/
 
 # Python
 __pycache__/
