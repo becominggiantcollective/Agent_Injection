@@ -133,7 +133,24 @@ dmypy.json
 .idea/
 *.swp
 *.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Agent Injection specific
+/storage/
+/logs/
+/temp/
+/tmp/
+*.db
+*.sqlite
+.agent_cache/
+campaign_results/
+agent_data/
+
+# Local configuration
+local_config.yaml
+.env.local
+secrets.yaml
