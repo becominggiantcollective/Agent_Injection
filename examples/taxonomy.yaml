@@ -1,0 +1,131 @@
+version: "1.0"
+description: "Comprehensive agent taxonomy for the Agent Injection framework"
+
+capabilities:
+  - name: "natural_language_processing"
+    description: "Process and understand natural language text"
+    category: "language"
+    parameters:
+      max_tokens: 4000
+      supported_languages: ["en", "es", "fr", "de"]
+  
+  - name: "data_analysis"
+    description: "Analyze structured and unstructured data"
+    category: "analytics"
+    parameters:
+      max_dataset_size: "10MB"
+      supported_formats: ["csv", "json", "xml"]
+  
+  - name: "web_scraping"
+    description: "Extract data from web pages and APIs"
+    category: "data_collection"
+    parameters:
+      max_concurrent_requests: 10
+      respect_robots_txt: true
+  
+  - name: "report_generation"
+    description: "Generate formatted reports and visualizations"
+    category: "output"
+    parameters:
+      supported_formats: ["pdf", "html", "markdown"]
+  
+  - name: "task_automation"
+    description: "Automate repetitive tasks and workflows"
+    category: "automation"
+    parameters:
+      max_execution_time: 3600
+      retry_attempts: 3
+  
+  - name: "api_integration"
+    description: "Integrate with external APIs and services"
+    category: "integration"
+    parameters:
+      timeout_seconds: 30
+      rate_limit_requests_per_minute: 60
+  
+  - name: "image_processing"
+    description: "Process and analyze images"
+    category: "media"
+    parameters:
+      max_image_size: "50MB"
+      supported_formats: ["jpg", "png", "gif", "webp"]
+  
+  - name: "file_operations"
+    description: "Read, write, and manipulate files"
+    category: "io"
+    parameters:
+      max_file_size: "100MB"
+      allowed_extensions: ["txt", "csv", "json", "xml", "pdf"]
+
+agent_types:
+  - name: "AnalystAgent"
+    description: "Specialized in data analysis and reporting"
+    capabilities: 
+      - "data_analysis"
+      - "report_generation"
+      - "natural_language_processing"
+    base_class: "BaseAgent"
+    config:
+      analysis_depth: "comprehensive"
+      visualization_enabled: true
+      cache_results: true
+  
+  - name: "ScraperAgent"
+    description: "Web scraping and data collection specialist"
+    capabilities:
+      - "web_scraping"
+      - "data_analysis"
+      - "file_operations"
+    base_class: "BaseAgent"
+    config:
+      user_agent: "AgentInjection-Bot/1.0"
+      delay_between_requests: 1
+      follow_redirects: true
+  
+  - name: "AutomationAgent"
+    description: "Task automation and workflow execution"
+    capabilities:
+      - "task_automation"
+      - "api_integration"
+      - "file_operations"
+    base_class: "BaseAgent"
+    config:
+      parallel_execution: true
+      error_recovery: "retry"
+      logging_level: "detailed"
+  
+  - name: "ContentAgent"
+    description: "Content processing and generation"
+    capabilities:
+      - "natural_language_processing"
+      - "report_generation"
+      - "image_processing"
+    base_class: "BaseAgent"
+    config:
+      content_quality: "high"
+      template_engine: "jinja2"
+      output_validation: true
+  
+  - name: "IntegrationAgent"
+    description: "API integration and data synchronization"
+    capabilities:
+      - "api_integration"
+      - "data_analysis"
+      - "task_automation"
+    base_class: "BaseAgent"
+    config:
+      authentication_methods: ["oauth2", "api_key", "bearer_token"]
+      data_transformation: "auto"
+      error_handling: "graceful"
+  
+  - name: "OrchestratorAgent"
+    description: "Coordinates multiple agents and complex workflows"
+    capabilities:
+      - "task_automation"
+      - "natural_language_processing"
+      - "api_integration"
+    base_class: "BaseAgent"
+    config:
+      coordination_strategy: "adaptive"
+      dependency_resolution: "automatic"
+      performance_monitoring: true

@@ -1,0 +1,114 @@
+name: "market_research_campaign"
+description: "Comprehensive market research analysis using multiple specialized agents"
+strategy: "adaptive"
+
+agents:
+  - "scraper_agent_001"
+  - "analyst_agent_001"
+  - "content_agent_001"
+  - "integration_agent_001"
+
+tasks:
+  - type: "data_collection"
+    description: "Collect market data from various sources"
+    requirements: 
+      - "web_scraping"
+      - "api_integration"
+    data:
+      sources:
+        - "https://api.marketdata.com/trends"
+        - "https://industry-reports.com/tech-sector"
+        - "https://financial-news.com/market-analysis"
+      collection_parameters:
+        time_range: "last_30_days"
+        data_types: ["pricing", "sentiment", "volume"]
+        format: "json"
+    priority: 1
+    timeout: 300
+  
+  - type: "data_analysis"
+    description: "Analyze collected market data for trends and insights"
+    requirements:
+      - "data_analysis"
+      - "natural_language_processing"
+    data:
+      analysis_type: "trend_analysis"
+      metrics:
+        - "price_volatility"
+        - "market_sentiment"
+        - "trading_volume"
+        - "sector_performance"
+      output_format: "structured_insights"
+    priority: 2
+    timeout: 600
+    depends_on: ["data_collection"]
+  
+  - type: "report_generation"
+    description: "Generate comprehensive market research report"
+    requirements:
+      - "report_generation"
+      - "natural_language_processing"
+      - "image_processing"
+    data:
+      report_type: "executive_summary"
+      sections:
+        - "market_overview"
+        - "trend_analysis"
+        - "risk_assessment"
+        - "recommendations"
+      include_visualizations: true
+      output_formats: ["pdf", "html"]
+    priority: 3
+    timeout: 900
+    depends_on: ["data_analysis"]
+  
+  - type: "distribution"
+    description: "Distribute report to stakeholders"
+    requirements:
+      - "api_integration"
+      - "file_operations"
+    data:
+      distribution_channels:
+        - email_list: "stakeholders@company.com"
+        - slack_channel: "#market-research"
+        - shared_drive: "/reports/market_research/"
+      notification_settings:
+        send_summary: true
+        include_alerts: true
+    priority: 4
+    timeout: 180
+    depends_on: ["report_generation"]
+
+config:
+  execution_strategy: "adaptive"
+  max_parallel_tasks: 2
+  error_handling: "continue_on_failure"
+  retry_attempts: 3
+  timeout_global: 3600
+  
+  monitoring:
+    track_performance: true
+    collect_metrics: true
+    real_time_updates: true
+  
+  storage:
+    backend: "database"
+    retention_days: 90
+    backup_enabled: true
+  
+  notifications:
+    on_completion: true
+    on_error: true
+    channels: ["email", "slack"]
+  
+  quality_gates:
+    min_data_coverage: 80
+    max_error_rate: 5
+    performance_threshold: "acceptable"
+
+metadata:
+  created_by: "market_research_team"
+  department: "strategy"
+  classification: "internal"
+  tags: ["market_research", "automated", "weekly"]
+  version: "2.1"

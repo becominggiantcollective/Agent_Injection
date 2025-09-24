@@ -2,6 +2,85 @@
 
 A flexible and powerful dependency injection framework designed specifically for AI agents and autonomous systems. This framework provides clean separation of concerns, testability, and modularity for agent-based applications.
 
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+# Install from source
+git clone https://github.com/becominggiantcollective/Agent_Injection.git
+cd Agent_Injection
+pip install -e .
+```
+
+For development:
+```bash
+pip install -e ".[dev]"
+```
+
+### Basic Usage
+
+1. **Initialize a new project:**
+```bash
+python -m cli init my_agent_project
+cd my_agent_project
+```
+
+2. **Run the example campaign:**
+```bash
+python -m cli run campaigns/example_campaign.yaml
+```
+
+3. **Check system status:**
+```bash
+python -m cli status
+```
+
+4. **Generate reports:**
+```bash
+python -m cli report system
+```
+
+### Project Structure
+
+```
+Agent_Injection/
+├── core/                    # Core framework components
+│   ├── config.py           # Configuration management
+│   ├── taxonomy.py         # Agent classification system
+│   └── base.py             # Base classes for agents and strategies
+├── strategies/              # Execution strategies
+│   ├── sequential.py       # Sequential execution
+│   ├── parallel.py         # Parallel execution
+│   └── adaptive.py         # Adaptive strategy selection
+├── execution/               # Execution engine
+│   ├── engine.py           # Main execution engine
+│   ├── scheduler.py        # Task scheduling
+│   └── coordinator.py      # Agent coordination
+├── analysis/                # Performance analysis
+│   ├── metrics.py          # Metrics collection
+│   └── performance.py      # Performance analysis
+├── reporting/               # Report generation
+│   ├── generators.py       # Report generators
+│   └── formatters.py       # Output formatters
+├── feedback/                # Feedback system
+│   ├── collectors.py       # Feedback collection
+│   └── processors.py       # Feedback processing
+├── storage/                 # Data persistence
+│   ├── backends.py         # Storage backends
+│   └── manager.py          # Storage management
+├── cli/                     # Command-line interface
+│   ├── main.py             # CLI commands
+│   └── __main__.py         # Module entry point
+├── examples/                # Example configurations
+│   ├── taxonomy.yaml       # Example agent taxonomy
+│   └── campaign.yaml       # Example campaign
+├── docs/                    # Documentation
+│   ├── architecture.md     # System architecture
+│   └── taxonomy.md         # Taxonomy guide
+└── tests/                   # Test suite
+```
+
 ## Features
 
 - **Type-safe dependency injection** with Python type hints
